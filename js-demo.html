@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>HTML DOM</title>
+		<script></script>
+	</head>
+
+	<body>
+		<form id="stud-data">
+			<div>
+				Firstname:<input
+					type="text"
+					id="first_name"
+					name="first_name"
+					placeholder="Enter your First name"
+					class="input-first-name"
+				/>
+			</div>
+			<div>
+				Lastname:<input
+					type="text"
+					id="last_name"
+					name="first_name"
+					placeholder="Enter your Last name"
+					class="input-last-name"
+				/>
+			</div>
+			<div>
+				Select Option: <br />Orange<input
+					type="checkbox"
+					name="option"
+					id="orange"
+				/>
+				<br />Blue<input type="checkbox" name="option" id="blue" />
+			</div>
+			<div>Date of Birth: <input type="date" name="dob" id="" /></div>
+			<button type="submit">Submit</button>
+		</form>
+		<script>
+			const form = document.getElementById("stud-data");
+			const firstName = document.getElementById("first_name");
+			const lastName = document.getElementById("last_name");
+			console.log(firstName);
+
+			form.addEventListener("submit", function (e) {
+				e.preventDefault();
+				console.log(firstName.value);
+				console.log(lastName.value);
+			});
+		</script>
+	</body>
+</html>
