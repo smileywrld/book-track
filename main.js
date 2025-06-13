@@ -16,6 +16,10 @@ libraryForm.addEventListener("submit", addEntry);
 function addEntry(e) {
 	e.preventDefault();
 	const bookTitle = inputTitle.value;
-    console.log(bookTitle);
-    const id = Math.round()
+	const id = Math.round(Math.random() * 1000000);
+
+	if (bookTitle !== "" && !editFlag) {
+		const entryItem = document.createElement("div");
+		entryItem.classList.add("entry-item");
+	}
 }
