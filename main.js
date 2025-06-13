@@ -8,3 +8,5 @@ const btnClearAll = document.querySelector(".clear-all");
 let entryTitle;
 let editFlag = false;
 let entryTitleID = "";
+
+libraryForm.addEventListener("submit", function () {});
