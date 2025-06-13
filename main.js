@@ -21,5 +21,7 @@ function addEntry(e) {
 	if (bookTitle !== "" && !editFlag) {
 		const entryItem = document.createElement("div");
 		entryItem.classList.add("entry-item");
+		const attributes = document.createAttribute(data - id);
+		attributes.value = id;
 	}
 }
