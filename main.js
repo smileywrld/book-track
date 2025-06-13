@@ -1,3 +1,4 @@
+// Initializing variables
 const alert = document.querySelector(".alert");
 const libraryForm = document.querySelector(".library-form");
 const inputTitle = document.getElementById("title");
@@ -9,4 +10,12 @@ let entryTitle;
 let editFlag = false;
 let entryTitleID = "";
 
-libraryForm.addEventListener("submit", function () {});
+// Registering Events on elements
+libraryForm.addEventListener("submit", addEntry);
+
+function addEntry(e) {
+	e.preventDefault();
+	const bookTitle = inputTitle.value;
+    console.log(bookTitle);
+    const id = Math.round()
+}
