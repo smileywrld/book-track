@@ -23,5 +23,7 @@ function addEntry(e) {
 		entryItem.classList.add("entry-item");
 		const attributes = document.createAttribute(data - id);
 		attributes.value = id;
+
+		entryItem.setAttributeNode(attributes);
 	}
 }
