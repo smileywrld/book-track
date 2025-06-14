@@ -25,5 +25,11 @@ function addEntry(e) {
 		attributes.value = id;
 
 		entryItem.setAttributeNode(attributes);
+		entryItem.innerHTML = `<div class="title">${bookTitle}</div>
+		<div class="action-btns-container">
+			<a href="#" class="btn btn-done"><i class="fa-regular fa-square-check"></i></a>
+			<a href="#" class="btn btn-edit"><i class="fa-regular fa-pen-to-square"></i></a>
+			<a href="#" class="btn btn-delete"><i class="fa-solid fa-trash-can"></i></a>
+		</div>`;
 	}
 }
