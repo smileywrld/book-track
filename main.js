@@ -18,10 +18,10 @@ function addEntry(e) {
 	const bookTitle = inputTitle.value;
 	const id = Math.round(Math.random() * 1000000);
 
-	if (bookTitle !== "" && !editFlag) {
+	if (bookTitle && !editFlag) {
 		const entryItem = document.createElement("div");
 		entryItem.classList.add("entry-item");
-		const attributes = document.createAttribute(data - id);
+		const attributes = document.createAttribute('data-id');
 		attributes.value = id;
 
 		entryItem.setAttributeNode(attributes);
@@ -31,5 +31,7 @@ function addEntry(e) {
 			<a href="#" class="btn btn-edit"><i class="fa-regular fa-pen-to-square"></i></a>
 			<a href="#" class="btn btn-delete"><i class="fa-solid fa-trash-can"></i></a>
 		</div>`;
+
+		entryContainer.appendChild(entryItem);
 	}
 }
