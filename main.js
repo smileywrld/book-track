@@ -21,7 +21,7 @@ function addEntry(e) {
 	if (bookTitle && !editFlag) {
 		const entryItem = document.createElement("div");
 		entryItem.classList.add("entry-item");
-		const attributes = document.createAttribute('data-id');
+		const attributes = document.createAttribute("data-id");
 		attributes.value = id;
 
 		entryItem.setAttributeNode(attributes);
@@ -32,6 +32,15 @@ function addEntry(e) {
 			<a href="#" class="btn btn-delete"><i class="fa-solid fa-trash-can"></i></a>
 		</div>`;
 
+		const btnDelete = entryItem.querySelector(".btn-delete");
+		btnDelete.addEventListener("click", deleteBook);
+
 		entryContainer.appendChild(entryItem);
+		entryContainer.classList.add("show-entry-container");
+	}
+
+	function deleteBook(e) {
+		const element = e.currentTarget.parentElement.parentElement;
+		entryContainer.removeChild(element);
 	}
 }
