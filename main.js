@@ -44,13 +44,16 @@ function addEntry(e) {
 
 	function deleteBook(e) {
 		const element = e.currentTarget.parentElement.parentElement;
-		console.log(element);
+		console.log(entryTitle);
 		entryContainer.removeChild(element);
 	}
 
 	function editBook(e) {
 		const element = e.currentTarget.parentElement.parentElement;
-		console.log(element);
-		inputTitle.innerHTML = inputTitle.value;
+		entryTitle = e.currentTarget.parentElement.previousElementSibling; // target the div that holds the title
+		inputTitle.value = entryTitle.innerHTML; // then replace the inputvalue with the inner html of the targeted div
+		btnSave.innerHTML = `<i class="fa-regular fa-pen-to-square">`; // chnage the save btn back to edit
+		entryTitleID = element.dataset.id;
+		editFlag = true;
 	}
 }
