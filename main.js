@@ -42,6 +42,9 @@ function addEntry(e) {
 		btnEdit.addEventListener("click", editBook);
 	} else if (editFlag === true) {
 		entryTitle.innerHTML = bookTitle;
+		editFlag = false;
+		inputTitle.value = "";
+		btnSave.innerHTML = `<i class="fa-regular fa-floppy-disk"></i>`;
 	}
 
 	function deleteBook(e) {
