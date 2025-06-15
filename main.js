@@ -40,6 +40,8 @@ function addEntry(e) {
 
 		const btnEdit = entryItem.querySelector(".btn-edit");
 		btnEdit.addEventListener("click", editBook);
+	} else if (editFlag === true) {
+		entryTitle.innerHTML = bookTitle;
 	}
 
 	function deleteBook(e) {
