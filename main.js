@@ -37,10 +37,20 @@ function addEntry(e) {
 
 		entryContainer.appendChild(entryItem);
 		entryContainer.classList.add("show-entry-container");
+
+		const btnEdit = entryItem.querySelector(".btn-edit");
+		btnEdit.addEventListener("click", editBook);
 	}
 
 	function deleteBook(e) {
 		const element = e.currentTarget.parentElement.parentElement;
+		console.log(element);
 		entryContainer.removeChild(element);
+	}
+
+	function editBook(e) {
+		const element = e.currentTarget.parentElement.parentElement;
+		console.log(element);
+		inputTitle.innerHTML = inputTitle.value;
 	}
 }
