@@ -45,6 +45,13 @@ function addEntry(e) {
 		editFlag = false;
 		inputTitle.value = "";
 		btnSave.innerHTML = `<i class="fa-regular fa-floppy-disk"></i>`;
+		alert.innerHTML = "Book Edited";
+		alert.classList.add("alert-success");
+
+		setTimeout(() => {
+			alert.innerHTML = "";
+			alert.classList.remove("alert-success");
+		}, 5000); // first time using the timeout function
 	}
 
 	function deleteBook(e) {
