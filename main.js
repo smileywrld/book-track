@@ -51,7 +51,7 @@ function addEntry(e) {
 		setTimeout(() => {
 			alert.innerHTML = "";
 			alert.classList.remove("alert-success");
-		}, 3000); // first time using the timeout function
+		}, 2500); // first time using the timeout function
 	}
 
 	function deleteBook(e) {
@@ -78,7 +78,7 @@ function addEntry(e) {
 		alert.classList.add = "alert-success";
 		setTimeout(() => {
 			alert.innerHTML = "";
-			alert.classList.add = "alert-success";
-		});
+			alert.classList.remove = "alert-success";
+		}, 2500);
 	}
 }
