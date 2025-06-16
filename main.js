@@ -68,4 +68,6 @@ function addEntry(e) {
 		entryTitleID = element.dataset.id;
 		editFlag = true;
 	}
+
+	const btnDone = document.querySelector(".btn-done");
 }
