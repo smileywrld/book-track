@@ -72,7 +72,6 @@ function addEntry(e) {
 	const btnDone = document.querySelector(".btn-done");
 	btnDone.addEventListener("click", completedBook);
 	function completedBook(e) {
-		const element = e.currentTarget.parentElement;
-		console.log(element);
+		const element = e.currentTarget.parentElement.previousElementSibling;
 	}
 }
