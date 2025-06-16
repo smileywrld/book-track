@@ -51,7 +51,7 @@ function addEntry(e) {
 		setTimeout(() => {
 			alert.innerHTML = "";
 			alert.classList.remove("alert-success");
-		}, 5000); // first time using the timeout function
+		}, 3000); // first time using the timeout function
 	}
 
 	function deleteBook(e) {
@@ -73,5 +73,6 @@ function addEntry(e) {
 	btnDone.addEventListener("click", completedBook);
 	function completedBook(e) {
 		const element = e.currentTarget.parentElement.previousElementSibling;
+		element.classList.add("btn-done-marked");
 	}
 }
