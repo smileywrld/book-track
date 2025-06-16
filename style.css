@@ -150,3 +150,12 @@ body {
 	color: #155724;
 	background-color: #d4edda;
 }
+
+@media only screen and (max-width: 600px) {
+	body {
+		background: url(https://img.freepik.com/free-vector/opened-book-table-with-desk-lamp-textbook-literature-study-light-illuminated-work-place_1284-42138.jpg?ga=GA1.1.494652152.1749508497&semt=ais_hybrid&w=740);
+		background-position: top;
+		background-size: cover;
+	}
+
+}

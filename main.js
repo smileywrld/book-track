@@ -75,10 +75,10 @@ function addEntry(e) {
 		const element = e.currentTarget.parentElement.previousElementSibling;
 		element.classList.add("btn-done-marked");
 		alert.innerHTML = "Book Completed";
-		alert.classList.add = "alert-success";
+		alert.classList.add("alert-success");
 		setTimeout(() => {
 			alert.innerHTML = "";
-			alert.classList.remove = "alert-success";
+			alert.classList.remove("alert-success");
 		}, 2500);
 	}
 }
