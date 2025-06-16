@@ -74,5 +74,11 @@ function addEntry(e) {
 	function completedBook(e) {
 		const element = e.currentTarget.parentElement.previousElementSibling;
 		element.classList.add("btn-done-marked");
+		alert.innerHTML = "Book Completed";
+		alert.classList.add = "alert-success";
+		setTimeout(() => {
+			alert.innerHTML = "";
+			alert.classList.add = "alert-success";
+		});
 	}
 }
