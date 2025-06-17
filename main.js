@@ -56,6 +56,15 @@ function addEntry(e) {
 			alert.innerHTML = "";
 			alert.classList.remove("alert-success");
 		}, 2000); // first time using the timeout function
+
+		let entries = getEntriesFromLocalStr();
+		entries = entries.map((entry) => {
+			if (entry.id == entryTitleID) {
+				return { ...entry, title: bookTitle };
+			}
+			return entry;
+		});
+		setEntriesToLocalStr(entries);
 	}
 
 	function deleteBook(e) {
