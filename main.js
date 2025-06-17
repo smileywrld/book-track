@@ -82,3 +82,11 @@ function addEntry(e) {
 		}, 2000);
 	}
 }
+
+function setEntriesToLocalStr(entries) {
+	localStorage.setItem("entries", JSON.stringify(entries));
+}
+
+function getEntriesFromLocalStr(entries) {
+	return JSON.parse(localStorage.getItem("entries") || []);
+}
