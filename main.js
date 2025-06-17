@@ -25,6 +25,7 @@ function addEntry(e) {
 		attributes.value = id;
 
 		const entries = getEntriesFromLocalStr();
+		entries.push({ title: bookTitle, id });
 		setEntriesToLocalStr(entries);
 
 		entryItem.setAttributeNode(attributes);
@@ -61,6 +62,10 @@ function addEntry(e) {
 		const element = e.currentTarget.parentElement.parentElement;
 		console.log(entryTitle);
 		entryContainer.removeChild(element);
+
+		let entries = getEntriesFromLocalStr();
+		entries = entries.filter((entry) => entry.id != id);
+		setEntriesToLocalStr(entries);
 	}
 
 	function editBook(e) {
@@ -84,14 +89,14 @@ function addEntry(e) {
 			alert.classList.remove("alert-success");
 		}, 2000);
 	}
+}
 
-	function setEntriesToLocalStr(entries) {
-		localStorage.setItem("entries", JSON.stringify(entries));
-	}
+function setEntriesToLocalStr(entries) {
+	localStorage.setItem("entries", JSON.stringify(entries));
+}
 
-	function getEntriesFromLocalStr(entries) {
-		return JSON.parse(localStorage.getItem("entries") || []);
-	}
+function getEntriesFromLocalStr(entries) {
+	return JSON.parse(localStorage.getItem("entries") || []);
 }
 
 window.addEventListener("DOMContentLoaded", setupEntries);
