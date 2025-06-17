@@ -51,7 +51,7 @@ function addEntry(e) {
 		setTimeout(() => {
 			alert.innerHTML = "";
 			alert.classList.remove("alert-success");
-		}, 2500); // first time using the timeout function
+		}, 2000); // first time using the timeout function
 	}
 
 	function deleteBook(e) {
