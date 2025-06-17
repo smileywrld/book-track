@@ -81,12 +81,12 @@ function addEntry(e) {
 			alert.classList.remove("alert-success");
 		}, 2000);
 	}
-}
 
-function setEntriesToLocalStr(entries) {
-	localStorage.setItem("entries", JSON.stringify(entries));
-}
+	function setEntriesToLocalStr(entries) {
+		localStorage.setItem("entries", JSON.stringify(entries));
+	}
 
-function getEntriesFromLocalStr(entries) {
-	return JSON.parse(localStorage.getItem("entries") || []);
+	function getEntriesFromLocalStr(entries) {
+		return JSON.parse(localStorage.getItem("entries") || []);
+	}
 }
