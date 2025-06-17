@@ -24,6 +24,9 @@ function addEntry(e) {
 		const attributes = document.createAttribute("data-id");
 		attributes.value = id;
 
+		const entries = getEntriesFromLocalStr();
+		setEntriesToLocalStr(entries);
+
 		entryItem.setAttributeNode(attributes);
 		entryItem.innerHTML = `<div class="title">${bookTitle}</div>
 		<div class="action-btns-container">
