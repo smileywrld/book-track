@@ -79,6 +79,6 @@ function addEntry(e) {
 		setTimeout(() => {
 			alert.innerHTML = "";
 			alert.classList.remove("alert-success");
-		}, 2500);
+		}, 2000);
 	}
 }
