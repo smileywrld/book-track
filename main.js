@@ -90,3 +90,16 @@ function addEntry(e) {
 		return JSON.parse(localStorage.getItem("entries") || []);
 	}
 }
+
+window.addEventListener("DOMContentLoaded", setupEntries);
+
+function setupEntries() {
+	const entries = getEntriesFromLocalStr();
+	entries.forEach((entry) => {
+		renderEntry(entry.title, entry.id);
+	});
+
+	if (entries.length > 0) {
+		entryContainer.classList.add("show-entry-container");
+	}
+}
