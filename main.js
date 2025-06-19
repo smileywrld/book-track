@@ -113,7 +113,7 @@ window.addEventListener("DOMContentLoaded", setupEntries);
 function setupEntries() {
 	const entries = getEntriesFromLocalStr();
 	entries.forEach((entry) => {
-		renderEntry(entry.title, entry.id);
+		renderEntry(entry.title, entry);
 	});
 
 	if (entries.length > 0) {
