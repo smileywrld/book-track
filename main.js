@@ -1,4 +1,4 @@
-// Initializing variables
+ // Initializing variables
 const alert = document.querySelector(".alert");
 const libraryForm = document.querySelector(".library-form");
 const inputTitle = document.getElementById("title");
