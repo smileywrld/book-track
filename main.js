@@ -1,4 +1,3 @@
-// Initializing variables
 const alert = document.querySelector(".alert");
 const libraryForm = document.querySelector(".library-form");
 const inputTitle = document.getElementById("title");
@@ -21,14 +20,8 @@ function addEntry(e) {
 	if (bookTitle && !editFlag) {
 		const entryItem = document.createElement("div");
 		entryItem.classList.add("entry-item");
-		const attributes = document.createAttribute("data-id");
-		attributes.value = id;
+		entryItem.setAttribute("data-id", id);
 
-		const entries = getEntriesFromLocalStr();
-		entries.push({ title: bookTitle, id });
-		setEntriesToLocalStr(entries);
-
-		entryItem.setAttributeNode(attributes);
 		entryItem.innerHTML = `<div class="title">${bookTitle}</div>
 		<div class="action-btns-container">
 			<a href="#" class="btn btn-done"><i class="fa-regular fa-square-check"></i></a>
@@ -44,6 +37,11 @@ function addEntry(e) {
 
 		const btnEdit = entryItem.querySelector(".btn-edit");
 		btnEdit.addEventListener("click", editBook);
+
+		const btnDone = entryItem.querySelector(".btn-done");
+		btnDone.addEventListener("click", completedBook);
+
+		inputTitle.value = "";
 	} else if (editFlag === true) {
 		entryTitle.innerHTML = bookTitle;
 		editFlag = false;
@@ -55,39 +53,23 @@ function addEntry(e) {
 		setTimeout(() => {
 			alert.innerHTML = "";
 			alert.classList.remove("alert-success");
-		}, 2000); // first time using the timeout function
-
-		let entries = getEntriesFromLocalStr();
-		entries = entries.map((entry) => {
-			if (entry.id == entryTitleID) {
-				return { ...entry, title: bookTitle };
-			}
-			return entry;
-		});
-		setEntriesToLocalStr(entries);
+		}, 2000);
 	}
 
 	function deleteBook(e) {
 		const element = e.currentTarget.parentElement.parentElement;
-		console.log(entryTitle);
 		entryContainer.removeChild(element);
-
-		let entries = getEntriesFromLocalStr();
-		entries = entries.filter((entry) => entry.id != id);
-		setEntriesToLocalStr(entries);
 	}
 
 	function editBook(e) {
 		const element = e.currentTarget.parentElement.parentElement;
-		entryTitle = e.currentTarget.parentElement.previousElementSibling; // target the div that holds the title
-		inputTitle.value = entryTitle.innerHTML; // then replace the inputvalue with the inner html of the targeted div
-		btnSave.innerHTML = `<i class="fa-regular fa-pen-to-square">`; // chnage the save btn back to edit
+		entryTitle = e.currentTarget.parentElement.previousElementSibling;
+		inputTitle.value = entryTitle.innerHTML;
+		btnSave.innerHTML = `<i class="fa-regular fa-pen-to-square"></i>`;
 		entryTitleID = element.dataset.id;
 		editFlag = true;
 	}
 
-	const btnDone = document.querySelector(".btn-done");
-	btnDone.addEventListener("click", completedBook);
 	function completedBook(e) {
 		const element = e.currentTarget.parentElement.previousElementSibling;
 		element.classList.add("btn-done-marked");
@@ -97,26 +79,5 @@ function addEntry(e) {
 			alert.innerHTML = "";
 			alert.classList.remove("alert-success");
 		}, 2000);
-	}
-}
-
-function setEntriesToLocalStr(entries) {
-	localStorage.setItem("entries", JSON.stringify(entries));
-}
-
-function getEntriesFromLocalStr(entries) {
-	return JSON.parse(localStorage.getItem("entries") || []);
-}
-
-window.addEventListener("DOMContentLoaded", setupEntries);
-
-function setupEntries() {
-	const entries = getEntriesFromLocalStr();
-	entries.forEach((entry) => {
-		renderEntry(entry.title, entry.id);
-	});
-
-	if (entries.length > 0) {
-		entryContainer.classList.add("show-entry-container");
 	}
 }
