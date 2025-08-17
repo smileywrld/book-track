@@ -4,6 +4,13 @@ const inputTitle = document.getElementById("title");
 const entryContainer = document.querySelector(".entry-container");
 const btnSave = document.getElementById("btn-save");
 const btnClearAll = document.querySelector(".clear-all");
+const main = document.getElementsByTagName("main");
+
+let red = Math.floor(Math.random() * 256);
+let green = Math.floor(Math.random() * 256);
+let blue = Math.floor(Math.random() * 256);
+
+document.main.style.backgroundColor = `rgb(200,200,200)`;
 
 let entryTitle;
 let editFlag = false;
