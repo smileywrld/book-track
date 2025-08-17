@@ -10,8 +10,7 @@ let red = Math.floor(Math.random() * 256);
 let green = Math.floor(Math.random() * 256);
 let blue = Math.floor(Math.random() * 256);
 
-document.main.style.backgroundColor = `rgb(200,200,200)`;
-
+document.body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`
 let entryTitle;
 let editFlag = false;
 let entryTitleID = "";
