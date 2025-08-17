@@ -58,6 +58,7 @@ body {
 .btn-save:hover {
 	background-color: rgb(205, 79, 33);
 }
+
 .btn-save:active {
 	background-color: coral;
 }
@@ -156,7 +157,6 @@ body {
 		background: url(https://i.pinimg.com/736x/7d/24/0d/7d240d109395734c6373ce31e9fcf57d.jpg);
 		background-position: center;
 		background-size: contain;
-		
 		background-repeat: repeat;
 	}
 
@@ -167,10 +167,10 @@ body {
 	}
 
 	.btn-done,
-.btn-edit,
-.btn-delete {
-	font-size: 2rem;
-	color: white;
-	border: none;
-}
+	.btn-edit,
+	.btn-delete {
+		font-size: 2rem;
+		color: white;
+		border: none;
+	}
 }
