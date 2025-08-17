@@ -155,8 +155,9 @@ body {
 	body {
 		background: url(https://i.pinimg.com/736x/7d/24/0d/7d240d109395734c6373ce31e9fcf57d.jpg);
 		background-position: center;
-		background-size: cover;
-		background-repeat: no-repeat;
+		background-size: contain;
+		
+		background-repeat: repeat;
 	}
 
 	main {
