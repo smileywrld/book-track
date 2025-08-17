@@ -4,13 +4,16 @@ const inputTitle = document.getElementById("title");
 const entryContainer = document.querySelector(".entry-container");
 const btnSave = document.getElementById("btn-save");
 const btnClearAll = document.querySelector(".clear-all");
-const main = document.getElementsByTagName("main");
 
-let red = Math.floor(Math.random() * 256);
-let green = Math.floor(Math.random() * 256);
-let blue = Math.floor(Math.random() * 256);
+setInterval(() => {
+	let red = Math.floor(Math.random() * 256);
+	let green = Math.floor(Math.random() * 256);
+	let blue = Math.floor(Math.random() * 256);
+	document.querySelector(
+		"main"
+	).style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+}, 2000);
 
-document.body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`
 let entryTitle;
 let editFlag = false;
 let entryTitleID = "";
