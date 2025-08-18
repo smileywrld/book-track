@@ -5,6 +5,7 @@ const entryContainer = document.querySelector(".entry-container");
 const btnSave = document.getElementById("btn-save");
 const btnClearAll = document.querySelector(".clear-all");
 
+// bg colors
 setInterval(() => {
 	let red = Math.floor(Math.random() * 256);
 	let green = Math.floor(Math.random() * 256);
